@@ -1,0 +1,20 @@
+/* your css code */
+
+.NavigationList {
+  display: flex;
+  list-style: none;
+}
+
+.NavigationLink:first-child {
+  margin-right: 30px;
+}
+
+.NavigationLink {
+  font-weight: 700;
+  text-decoration: none;
+  color: rgb(24, 24, 26);
+}
+
+.NavigationLinkActive {
+  color: rgb(160, 21, 51);
+}

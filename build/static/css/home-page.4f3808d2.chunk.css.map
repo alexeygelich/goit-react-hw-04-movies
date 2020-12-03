@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/FilmList/FilmItem/FilmItem.module.css"],"names":[],"mappings":"AAEA,wBACE,aACF","file":"home-page.4f3808d2.chunk.css","sourcesContent":["/* your css code */\n\n.item a {\n  color: rgb(13, 66, 112);\n}\n"]}
