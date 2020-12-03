@@ -28,7 +28,7 @@ export default class ShowDetails extends Component {
         if (response.status === 404) {
           return this.props.history.push("/404");
         }
-        console.log(response.status, ' response.status');
+        console.log(response.status, " response.status");
       });
   }
 
@@ -43,6 +43,8 @@ export default class ShowDetails extends Component {
   render() {
     const { loader, title, backdrop_path, release_date, vote_average, overview, genres } = this.state;
     const { match } = this.props;
+    const MovieCast = lazy(() => import("./MovieCast" /* webpackChunkName: "MovieCast" */));
+    const MovieReviews = lazy(() => import("./MovieReviews" /* webpackChunkName: "MovieReviews" */));
     return (
       <div>
         {!loader ? (
@@ -108,14 +110,8 @@ export default class ShowDetails extends Component {
               </ul>
             </div>
             <Suspense fallback={<Loader />}>
-              <Route
-                path={routers.MovieCast}
-                component={lazy(() => import("./MovieCast" /* webpackChunkName: "MovieCast" */))}
-              />
-              <Route
-                path={routers.MovieReviews}
-                component={lazy(() => import("./MovieReviews" /* webpackChunkName: "MovieReviews" */))}
-              />
+              <Route path={routers.MovieCast} component={MovieCast} />
+              <Route path={routers.MovieReviews} component={MovieReviews} />
             </Suspense>
           </>
         ) : (
